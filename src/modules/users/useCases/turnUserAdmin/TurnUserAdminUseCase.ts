@@ -9,7 +9,11 @@ class TurnUserAdminUseCase {
   constructor(private usersRepository: IUsersRepository) {}
 
   execute({ user_id }: IRequest): User {
-    // Complete aqui
+    const user =  new User();
+    Object.assign(user,{
+      id: user_id
+    })
+    return this.usersRepository.turnAdmin(user);
   }
 }
 

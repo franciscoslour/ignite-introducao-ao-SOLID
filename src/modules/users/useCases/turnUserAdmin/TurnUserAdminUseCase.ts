@@ -7,7 +7,7 @@ interface IRequest {
 
 class TurnUserAdminUseCase {
   constructor(private usersRepository: IUsersRepository) {}
-
+  
   execute({ user_id }: IRequest): User {
     const user =  new User();
     Object.assign(user,{
